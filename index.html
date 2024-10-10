@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <style>
+       @charset "UTF-8";
+
+
+* {
+	/* Remove a margem externa de todos os lados do elemento. */
+	margin: 0;
+
+	/* Remove o espaçamento interno de todos os lados do elemento. */
+	padding: 0;
+
+	/* Inclui o preenchimento e a borda na largura e altura. */
+	box-sizing: border-box;
+}
+
+body {
+	/* Exibição flexível.                          */
+	/* Torna o elemento um flex container          */
+	/* e os seus elementos internos em flex-itens. */
+	display: flex;
+
+	/* Quebra de linha quando os itens não couberem na largura da tela. */
+	flex-wrap: wrap;
+
+	/* Junção de flex-grow, flex-shrink e flex-basis.  */
+	/* flex-grow – Habilidade de um flex item crescer. */
+	/* flex-shrink - Capacidade de redução do item.    */
+	/* flex-basis – Tamanho inicial do item.           */
+	flex: 1 1 100vw;
+
+	/* Margem de todos os lados. */
+	margin: 3px;
+    font-family: sans-serif;
+}
+
+/* Formatação comum entre os elementos. */
+header, nav, main, aside, footer {
+	/* Cor do fundo. */
+	background: #43554b;
+
+	/* Exibição flexível.                          */
+	/* Torna o elemento um flex container          */
+	/* e os seus elementos internos em flex-itens. */
+	display: flex;
+
+	/* Margem externa de todos os lados. */
+	margin: 3px;
+}
+
+/* Seletores para formatação individual. */
+
+header {
+	/* Altura do elemento. */
+	height: 100px;
+
+	/* Junção de flex-grow, flex-shrink e flex-basis.  */
+	/* flex-grow – Habilidade de um flex item crescer. */
+	/* flex-shrink - Capacidade de redução do item.    */
+	/* flex-basis – Tamanho inicial do item.           */
+	flex: 1 1 100vw;
+}
+
+header #logo {
+	/* Exibição flexível.                          */
+	/* Torna o elemento um flex container          */
+	/* e os seus elementos internos em flex-itens. */
+	display: flex;
+
+	/* Junção de flex-grow, flex-shrink e flex-basis.  */
+	/* flex-grow – Habilidade de um flex item crescer. */
+	/* flex-shrink - Capacidade de redução do item.    */
+	/* flex-basis – Tamanho inicial do item.           */
+	flex: 0 1 200px;
+
+	/* Cor do fundo. */
+	background: #43554b;
+
+	/* Alinha os itens na vertical. */
+	justify-content: center;
+
+	/* Alinha os itens na horizontal. */
+	align-items: center;
+}
+
+#openMenu, #closeMenu {
+	/* Remove a borda. */
+	border: none;
+
+	/* Remove a cor de fundo. */
+	background: none;
+
+	/* Tamanho da fonte. */
+	font-size: 30px;
+
+	/* Espessura da forte. */
+	font-weight: bold;
+
+	/* Margem ao redor do elemento              */
+	/* (superior, direito, inferior e esquerdo) */
+	padding: 0px 5px 0px 5px;
+
+	/* Muda o cursor do mouse para ponteiro.*/
+	cursor: pointer;
+
+	/* Oculta o elemento. */
+	display: none;
+}
+
+nav {
+	/* Alinha os itens na vertical. */
+	justify-content: flex-end;
+
+	/* Alinha os itens na horizontal. */
+	align-items: center;
+
+	/* Junção de flex-grow, flex-shrink e flex-basis.  */
+	/* flex-grow – Habilidade de um flex item crescer. */
+	/* flex-shrink - Capacidade de redução do item.    */
+	/* flex-basis – Tamanho inicial do item.           */
+	flex: 1 1 200px;
+}
+
+nav a {
+	/* Margem de todos os lados. */
+	margin: 0 3%;
+
+	/* Tamanho da fonte. */
+	font-size: 15pt;
+    color: black;
+    font-weight: bold;
+    
+}
+
+nav a:hover {
+    color: white;  
+}
+
+main {
+	/* Realizar a subtração de 100% da altura vertical menos a soma    */
+	/* da altura dos elementos ( 400px ) com as suas margens ( 36px ). */
+	height: calc(100vh - 224px);
+
+	/* Junção de flex-grow, flex-shrink e flex-basis.  */
+	/* flex-grow – Habilidade de um flex item crescer. */
+	/* flex-shrink - Capacidade de redução do item.    */
+	/* flex-basis – Tamanho inicial do item.           */
+	flex: 20 1 500px;
+}
+
+aside {
+	/* Junção de flex-grow, flex-shrink e flex-basis.  */
+	/* flex-grow – Habilidade de um flex item crescer. */
+	/* flex-shrink - Capacidade de redução do item.    */
+	/* flex-basis – Tamanho inicial do item.           */
+	flex: 1 1 200px;
+	position: relative;
+}
+
+footer {
+	/* Altura do elemento. */
+	height: 100px;
+
+	/* Junção de flex-grow, flex-shrink e flex-basis.  */
+	/* flex-grow – Habilidade de um flex item crescer. */
+	/* flex-shrink - Capacidade de redução do item.    */
+	/* flex-basis – Tamanho inicial do item.           */
+	flex: 1 1 100vw;
+}
+
+a {
+	/* Remove a decoração padrão do elemento. */
+	text-decoration: none;
+
+	/* Definir a cor da fonte para o padrão do elemento pai. */
+	color: inherit;
+}
+
+
+.logo-img {
+    width: 100px;
+    border: none;
+    border-radius: 50px;
+}
+
+/* Carrossel */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: 100%; /* Ajusta para o tamanho desejado */
+    overflow: hidden;
+}
+
+.carousel-slide {
+    display: flex;
+    width: 100%; /* 4 slides, 100% para cada */
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover scale-down;
+    flex: 1 0 100%; /* Cada imagem ocupa 100% do container */
+		
+}
+
+/* Indicadores */
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 20px; /* Ajusta para que as bolinhas fiquem dentro do carrossel */
+    left: 50%;
+    transform: translateX(-50%); /* Centraliza as bolinhas */
+    width: auto;
+    z-index: 100; /* Garante que os indicadores apareçam sobre as imagens */
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.indicator.active {
+    background-color: white;
+}
+
+.indicator:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+
+
+
+.meio-ambiente {
+	position: absolute;
+	width: 500px;
+	height: 100%;
+	left: -230px;
+	z-index: 0;
+}
+
+
+/* Altera o estilo dos elementos para serem apresentados */ 
+/* em telas menores que 717px. */
+@media only screen and (max-width: 717px) {
+	#openMenu, #closeMenu {
+		/* Retorna a visibilidade padrão. */
+		display: block;
+	}
+
+	#openMenu {
+		/* Espaço a esquerda será preenchido automaticamente
+		   colocando os itens a direita. */
+		margin-left: auto;
+	}
+
+	#closeMenu {
+		/* Torna a posição do elemento fixa. */
+		position: fixed;
+
+		/* Dispõe o elemento a 15px da esquerda. */
+		right: 15px;
+
+		/* Dispõe o elemento a 15px do topo. */
+		top: 15px;
+	}
+
+	nav {
+		/* Torna a posição do elemento fixa. */
+		position: fixed;
+
+		/* Ocupa 100% da largura da tela de exibição. */
+		width: 100vw;
+
+		/* Ocupa 100% da altura da tela de exibição. */
+		height: 100vh;
+
+		/* Cor em RGB, mais transparência. */
+		background: rgba(255, 255, 255, 0.8);
+
+		/* Dispõe os itens em coluna. */
+		flex-direction: column;
+
+		/* Alinha os itens na horizontal. */
+		align-items: center;
+
+		/* Alinha os itens na vertical. */
+		justify-content: center;
+
+		/* Remove a margem externa de todos os lados do elemento. */
+		margin: 0;
+
+		/* Oculta o elemento. */
+		display: none;
+
+		/* Invisivel */
+		opacity: 0;
+
+		/* Velocidade de transição de um estado para outro. */
+		transition: 0.3s;
+	}
+
+	nav a {
+		/* Margem de todos os lados. */
+		margin: 3%;
+	}
+
+	main {
+		/* Realizar a subtração de 100% da altura vertical menos a soma    */
+		/* da altura dos elementos ( 300px ) com as suas margens ( 30px ). */
+		height: calc(100vh - 330px);
+	}
+
+	aside {
+		/* Altura do elemento. */
+		height: 100px;
+	}
+}
+    </style>
+</head>
+<body>
+    <header>
+        <a href="" id="logo"> <img class="logo-img" src="b0dec0ec-d99e-483b-9cf4-ac65b7959101.jpg" alt=""></a>
+
+        <button id="openMenu">&#9776;</button>
+
+    <nav id="menu">
+        <button id="closeMenu">X</button>
+        <a href="#">Informações do jogo</a>
+        <a href="#">Como ajudar</a>
+        <a href="#">Noticias</a>
+        <a href="#">Comunidade</a>
+    </nav>
+
+    </header>
+
+    <main>
+        <div class="carousel-container">
+            <div class="carousel-slide">
+                <img class="slide1" src="https://static.vecteezy.com/ti/vetor-gratis/p1/11484149-menu-de-jogo-de-fazenda-de-pixel-art-tela-inicial-do-jogo-de-8-bits-com-fundo-de-paisagem-noturna-vetor.jpg" alt="Slide 1">
+                <img src="https://ampost.com.br/wp-content/uploads/2024/06/temporada-do-fogo-1.webp" alt="Slide 2">
+                <img src="https://img.itch.zone/aW1nLzE1MDMzNDM4LnBuZw==/original/IwIn7J.png" alt="Slide 3">
+                <img src="slide4.jpg" alt="Slide 4">
+            </div>
+            
+            <!-- Movido para dentro do container do carrossel -->
+            <div class="carousel-indicators">
+                <span class="indicator active" data-slide="0"></span>
+                <span class="indicator" data-slide="1"></span>
+                <span class="indicator" data-slide="2"></span>
+                <span class="indicator" data-slide="3"></span>
+            </div>
+        </div>
+        
+    </main>
+
+    <footer>
+			Jogue com seu heroi favorito
+		</footer>
+
+		<footer>
+			Ajude o meio ambiente
+		</footer>
+
+		<footer>
+			Noticias
+		</footer>
+
+		<footer>
+			Comunidade
+		</footer>
+
+		<footer>
+			copyright
+		</footer>
+
+    <script>
+        
+openMenu.addEventListener('click', () => {
+
+
+menu.style.display = "flex"
+
+
+menu.style.right = (menu.offsetWidth * -1) + 'px'
+
+setTimeout(()=> {
+    
+    menu.style.opacity = '1'
+
+    
+    menu.style.right = "0"
+
+   
+    openMenu.style.display = 'none'
+}, 10);
+})
+
+
+closeMenu.addEventListener('click', () => {
+
+
+menu.style.opacity = '0'
+
+
+menu.style.right = (menu.offsetWidth * -1) + 'px'
+
+
+
+
+setTimeout(()=> {
+    menu.removeAttribute('style')
+    openMenu.removeAttribute('style')
+}, 200);
+})
+
+const carouselSlide = document.querySelector('.carousel-slide');
+const slides = document.querySelectorAll('.carousel-slide img');
+const indicators = document.querySelectorAll('.indicator');
+let currentIndex = 0;
+const totalSlides = slides.length;
+
+function updateCarousel(index) {
+    currentIndex = index;
+    carouselSlide.style.transform = `translateX(${-currentIndex * 100}%)`;
+    updateIndicators();
+}
+
+function updateIndicators() {
+    indicators.forEach((indicator, idx) => {
+        if (idx === currentIndex) {
+            indicator.classList.add('active');
+        } else {
+            indicator.classList.remove('active');
+        }
+    });
+}
+
+indicators.forEach((indicator) => {
+    indicator.addEventListener('click', (e) => {
+        const index = parseInt(e.target.getAttribute('data-slide'));
+        updateCarousel(index);
+    });
+});
+
+    </script>
+</body>
+
+
+</html>
